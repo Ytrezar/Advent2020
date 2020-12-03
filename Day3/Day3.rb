@@ -2,17 +2,9 @@ txt =  File.open("Day3/input.txt", "r")
 data = txt.read
 map = data.split("\n")
 taille = map[0].length
-positionx1 = 0
-positionx3 = 0
-positionx5 = 0
-positionx7 = 0
-positionx12 = 0
+positionx1 = positionx3 = positionx5 = positionx7 = positionx12 = 0
 positiony = 0
-trees1 = 0
-trees3 = 0
-trees5 = 0
-trees7 = 0
-trees12 = 0
+trees1 = trees3 = trees5 = trees7 = trees12 = 0
 map.each do |ligne|
 	if positiony != 0
 		positionx1 + 1 >= taille ? positionx1 = positionx1 + 1 - taille : positionx1 += 1
@@ -42,9 +34,5 @@ map.each do |ligne|
 end
 
 
-p trees1
-p trees3
-p trees5
-p trees7
-p trees12
-p trees1 * trees3 * trees5 * trees7 *trees12
+p trees3 #1st part
+p trees1 * trees3 * trees5 * trees7 *trees12 #second part
